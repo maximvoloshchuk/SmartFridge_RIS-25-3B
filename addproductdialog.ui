@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddProductDialog</class>
+ <widget class="QDialog" name="AddProductDialog">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>520</width><height>600</height></rect></property>
+  <property name="windowTitle"><string>📦 Добавление продукта</string></property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing"><number>8</number></property>
+   <item>
+    <widget class="QLabel" name="labelTitle">
+     <property name="text"><string>&lt;h2&gt;📦 Добавление продукта&lt;/h2&gt;</string></property>
+     <property name="alignment"><set>Qt::AlignCenter</set></property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="spacing"><number>6</number></property>
+     <item row="0" column="0"><widget class="QLabel" name="labelName"><property name="text"><string>📝 Название:</string></property></widget></item>
+     <item row="0" column="1"><widget class="QLineEdit" name="lineEditName"><property name="minimumSize"><size><width>0</width><height>35</height></size></property><property name="placeholderText"><string>Молоко Простоквашино 3.2%</string></property></widget></item>
+     <item row="1" column="0"><widget class="QLabel" name="labelBarcode"><property name="text"><string>🔢 Штрих-код:</string></property></widget></item>
+     <item row="1" column="1"><widget class="QLineEdit" name="lineEditBarcode"><property name="minimumSize"><size><width>0</width><height>35</height></size></property><property name="placeholderText"><string>Оставьте пустым для авто</string></property></widget></item>
+     <item row="2" column="0"><widget class="QLabel" name="labelManufacture"><property name="text"><string>📅 Дата изготовления:</string></property></widget></item>
+     <item row="2" column="1"><widget class="QDateEdit" name="dateManufacture"><property name="calendarPopup"><bool>true</bool></property><property name="displayFormat"><string>dd.MM.yyyy</string></property><property name="minimumSize"><size><width>0</width><height>35</height></size></property></widget></item>
+     <item row="3" column="0"><widget class="QLabel" name="labelShelfLife"><property name="text"><string>📆 Срок годности (дней):</string></property></widget></item>
+     <item row="3" column="1"><widget class="QSpinBox" name="spinShelfLife"><property name="minimum"><number>1</number></property><property name="maximum"><number>3650</number></property><property name="value"><number>7</number></property><property name="minimumSize"><size><width>0</width><height>35</height></size></property></widget></item>
+     <item row="4" column="0"><widget class="QLabel" name="labelCat"><property name="text"><string>📂 Категория:</string></property></widget></item>
+     <item row="4" column="1"><widget class="QComboBox" name="comboCategory"><property name="minimumSize"><size><width>0</width><height>35</height></size></property><item><property name="text"><string>Молочные продукты</string></property></item><item><property name="text"><string>Мясо и птица</string></property></item><item><property name="text"><string>Морепродукты</string></property></item><item><property name="text"><string>Овощи и фрукты</string></property></item><item><property name="text"><string>Напитки</string></property></item><item><property name="text"><string>Заморозка</string></property></item><item><property name="text"><string>Соусы и специи</string></property></item></widget></item>
+     <item row="5" column="0"><widget class="QLabel" name="labelStorage"><property name="text"><string>🌡 Хранение:</string></property></widget></item>
+     <item row="5" column="1"><widget class="QComboBox" name="comboStorage"><property name="minimumSize"><size><width>0</width><height>35</height></size></property><item><property name="text"><string>🧊 Холодильник (+4°C)</string></property><property name="data"><string>fridge</string></property></item><item><property name="text"><string>❄️ Морозилка (-18°C)</string></property><property name="data"><string>freezer</string></property></item></widget></item>
+     <item row="6" column="0"><widget class="QLabel" name="labelQty"><property name="text"><string>📦 Количество (шт):</string></property></widget></item>
+     <item row="6" column="1"><widget class="QSpinBox" name="spinQuantity"><property name="minimum"><number>1</number></property><property name="maximum"><number>999</number></property><property name="value"><number>1</number></property><property name="minimumSize"><size><width>0</width><height>35</height></size></property></widget></item>
+     <item row="7" column="0"><widget class="QLabel" name="labelWeight"><property name="text"><string>⚖ Вес упаковки:</string></property></widget></item>
+      <item row="7" column="1">
+      <layout class="QHBoxLayout">
+       <item>
+        <widget class="QDoubleSpinBox" name="spinWeight">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximum">
+          <double>9999.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>1.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboUnit">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>35</height>
+          </size>
+         </property>
+         <item>
+          <property name="text"><string>шт</string></property>
+         </item>
+         <item>
+          <property name="text"><string>г</string></property>
+         </item>
+         <item>
+          <property name="text"><string>кг</string></property>
+         </item>
+         <item>
+          <property name="text"><string>мл</string></property>
+         </item>
+         <item>
+          <property name="text"><string>л</string></property>
+         </item>
+        </widget>
+     </item>
+</layout>
+</item>
+     <item row="8" column="1"><widget class="QCheckBox" name="checkFavorite"><property name="text"><string>⭐ В избранное</string></property></widget></item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout">
+     <item><widget class="QPushButton" name="btnSave"><property name="text"><string>✅ Сохранить</string></property><property name="minimumSize"><size><width>0</width><height>45</height></size></property></widget></item>
+     <item><widget class="QPushButton" name="btnCancel"><property name="text"><string>❌ Отмена</string></property><property name="minimumSize"><size><width>0</width><height>45</height></size></property></widget></item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

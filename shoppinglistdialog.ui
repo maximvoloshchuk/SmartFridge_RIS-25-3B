@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ShoppingListDialog</class>
+ <widget class="QDialog" name="ShoppingListDialog">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>550</width><height>500</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>🛒 Умный список покупок</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item><widget class="QTextBrowser" name="textBrowser"/></item>
+   <item><widget class="QPushButton" name="btnClose"><property name="text"><string>Закрыть</string></property></widget></item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection><sender>btnClose</sender><signal>clicked()</signal><receiver>ShoppingListDialog</receiver><slot>accept()</slot></connection>
+ </connections>
+</ui>

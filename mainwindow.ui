@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>АРМ Специалиста — Умный Холодильник v2.0</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_1">
+    <property name="spacing">
+     <number>8</number>
+    </property>
+    <property name="leftMargin">
+     <number>10</number>
+    </property>
+    <property name="topMargin">
+     <number>10</number>
+    </property>
+    <property name="rightMargin">
+     <number>10</number>
+    </property>
+    <property name="bottomMargin">
+     <number>10</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="topPanelLayout">
+      <item>
+       <widget class="QLabel" name="labelSearch">
+        <property name="minimumSize">
+         <size>
+          <width>140</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>🔍 Поиск/Штрих-код:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditSearch">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="placeholderText">
+         <string>Введите название или отсканируйте штрих-код...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelCategory">
+        <property name="text">
+         <string>📂 Категория:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBoxCategory">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>0</height>
+         </size>
+        </property>
+        <item>
+         <property name="text">
+          <string>Все категории</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Молочные продукты</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Мясо и птица</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Морепродукты</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Овощи и фрукты</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Напитки</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Заморозка</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Соусы и специи</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_1">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnAddProduct">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>38</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>➕ Добавить продукт</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnShoppingList">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>38</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>🛒 Список покупок</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnHistory">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>38</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>📊 История</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="mainContentLayout" stretch="0,0">
+      <item>
+       <widget class="QTableWidget" name="tableProducts">
+        <property name="editTriggers">
+         <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+        </property>
+        <property name="columnCount">
+         <number>8</number>
+        </property>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Название</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Штрих-код</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Категория</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Срок годности</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Дней осталось</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Кол-во</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Хранение</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="fridgeContainerLayout">
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="labelFridgeTitle">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>🧊 Визуализация холодильной камеры</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="FridgeWidget" name="fridgeWidget" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>380</width>
+            <height>500</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="legendLayout">
+          <item>
+           <widget class="QLabel" name="labelLegendGreen">
+            <property name="text">
+             <string>🟢 Нормально</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelLegendYellow">
+            <property name="text">
+             <string>🟡 Заканчивается</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelLegendRed">
+            <property name="text">
+             <string>🔴 Просрочен</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="bottomPanelLayout">
+      <item>
+       <widget class="QPushButton" name="btnTakeProduct">
+        <property name="minimumSize">
+         <size>
+          <width>160</width>
+          <height>38</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>📤 Взять продукт</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnReturnProduct">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>38</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>📥 Вернуть продукт</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnToggleFavorite">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>38</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>⭐ В избранное</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnDeleteProduct">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>38</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string>background-color: #f38ba8; color: #1e1e2e;</string>
+        </property>
+        <property name="text">
+         <string>🗑 Удалить продукт</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelTotalInfo">
+        <property name="text">
+         <string>Всего продуктов: 0 | Просрочено: 0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1400</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>📁 Файл</string>
+    </property>
+    <addaction name="actionExportReport"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>👁 Вид</string>
+    </property>
+    <addaction name="actionRefresh"/>
+    <addaction name="actionShowFavorites"/>
+    <addaction name="separator"/>
+    <addaction name="actionClearHistory"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>❓ Помощь</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExportReport">
+   <property name="text">
+    <string>📄 Экспорт отчёта</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>🚪 Выход</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="text">
+    <string>🔄 Обновить</string>
+   </property>
+  </action>
+  <action name="actionShowFavorites">
+   <property name="text">
+    <string>⭐ Показать избранное</string>
+   </property>
+  </action>
+  <action name="actionClearHistory">
+   <property name="text">
+    <string>🗑 Очистить историю потребления</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>ℹ О программе</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FridgeWidget</class>
+   <extends>QWidget</extends>
+   <header>fridgewidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
